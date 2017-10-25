@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>﻿Setting up a Freifunk node in Tempelhofer Feld</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">riccomatx </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/freifunk.html">freifunk</a></li>
+                    <li><a href="/category/photos.html">photos</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/freifunk-tempelhofer-feld-node.html" rel="bookmark"
+           title="Permalink to ﻿Setting up a Freifunk node in Tempelhofer Feld">﻿Setting up a Freifunk node in Tempelhofer Feld</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-10-18T00:00:00+02:00">
+                Published: Mi 18 Oktober 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/riccomatx.html">riccomatx</a>
+        </address>
+<p>In <a href="/category/freifunk.html">freifunk</a>.</p>
+<p>tags: <a href="/tag/freifunk.html">freifunk</a> <a href="/tag/workshop.html">workshop</a> <a href="/tag/chronik.html">chronik</a> </p>
+</footer><!-- /.post-info -->      <div class="figure">
+<img alt="Wind turbine and Freifunk node" src="images/freifunk-tempelhof1/windrad-container.jpg" style="width: 500px;" />
+<p class="caption">Wind turbine and Freifunk node</p>
+<div class="legend">
+On the right side on the container is the recoding team together with 2 freifunkers. On the left side is the turbine that powers everything.</div>
+</div>
+<div class="section" id="tempelhofer-freifunk">
+<h2>Tempelhofer Freifunk</h2>
+<p>It's Sunday shortly after 12.00pm, I reach a container in Tempelhofer Feld, not far from the entry near Boddinstr. Usually every Sunday from 2.00pm to 6.00pm there is a free bike repairing service, but today we have also 3 guys from <a class="reference external" href="https://berlin.freifunk.net/index_en/">Berlin Freifunk</a> and 2 girls recording a <a class="reference external" href="http://fieldtrip.berlin/">documentary about groups and initiatives in Tempelhofer Park</a>.</p>
+<p>The girls ask me if I want to be recorded. Of course, I don't.
+The guys are busy trying to find out how to drill some holes in the container, so they can set up a mast for the antennas.</p>
+<p>After a while there, we let 2 guys with the recording team and the mast and I went with the third freifunker inside the container to test the equipment. The equipment are:</p>
+<blockquote>
+<ul class="simple">
+<li>3 sector antennas, each one with an Access Point (<abbr title="Access Point">AP</abbr>) and covering 120 degrees for around 200 euro. The model was an <a class="reference external" href="https://www.ubnt.com/airmax/airmax-sector-antenna/">Ubiquiti Networks AM-2G15-120</a>, I think.</li>
+<li>a parabolic (small) dish with an integrated AP. Around 60 euros. <a class="reference external" href="https://www.ubnt.com/airmax/litebeam-ac/">Ubiquiti LBE-5AC-23</a></li>
+<li>and a switch (maybe <a class="reference external" href="https://www.ubnt.com/edgemax/edgepoint/">Ubiquiti EP-R6</a>). A 100 euro switch, with around 5 PoE and an <a class="reference external" href="https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver">SFP</a> ports.</li>
+<li>Some <a class="reference external" href="https://www.ubnt.com/accessories/poe-adapters/">PoE adapters</a>, to provide power to the entire setup. Some ethernet wires, etc.</li>
+</ul>
+</blockquote>
+<p>The idea is: with the dish we link to a near Freifunk Station in the airport building, with all the three antennas we provide network to the people and the devices around, and with the switch we bind everything together. Network traffic will flow from your mobile phone to the sector antenna, to the switch, to the dish, to the nearby Freifunk station and afterwards it will be routed somehow through the Berlin Backbone into the Internet.</p>
+</div>
+<div class="section" id="equipment-setup">
+<h2>Equipment setup</h2>
+<p>But first things go first, we start by powering the switch with one of the PoE adapters. Plug the PoE adapter into the power socket and then an ethernet wire between the adapter and the switch. The switch turns on without problems.</p>
+<div class="figure">
+<img alt="Sector antenna with access point, switch and PoE" src="images/freifunk-tempelhof1/test-the-configuration.jpg" style="width: 500px;" />
+<p class="caption">Sector antenna with access point, switch and PoE</p>
+</div>
+<p>The second is step is to use another ethernet wire to connect the switch with an AP. The AP is already mounted in the antenna. Here we have a problem, because somehow the AP takes a little bit too long to turn on. After a few minutes we find out that we should log in into the switch(*) and turn all the five PoE ports on.</p>
+<p>We have already a sector antenna bound to the switch, and everything receives current and is up. With the mobile phone we can see the wireless network belonging to that antenna and we can bind to it, BUT somehow we don't get an IP address.</p>
+<p>After a few minutes, the freifunker operating the switch config solves the problem: we get an IP address. What is missing? Well, we don't reach the outside network: we have no Internet, no instagram, no twitter. Sad.</p>
+<div class="figure">
+<img alt="Parabolic Dish for the point to point link." src="images/freifunk-tempelhof1/dish.jpg" style="width: 500px;" />
+<p class="caption">Parabolic Dish for the point to point link.</p>
+</div>
+<p>Third step: Now we will plug in the parabolic dish, so the entire traffic of this cell can be routed outside. We throw another ethernet wire from the switch to the dish. The dish has a little ehternet socket on the side. I point the dish to the airport building, where another Freifunk station lives and... it doesn't works, because you have to point it really well and I am pointing it slightly in the wrong direction, so the radio signal is going somewhere else.</p>
+<p>Again, the Freifunker solves the problem. The dish is pointed properly, the link becomes established and the configuration in the devices does the rest. We check if we can ping 8.8.8.8 and voila!, it works.</p>
+</div>
+<div class="section" id="finishing">
+<h2>Finishing</h2>
+<p>The rest of the day will be about finishing the assembly outside. Bringing all the hardware onto the roof of the container, point the antennas properly and check again if magic happens.</p>
+<div class="figure">
+<img alt="The setup is almost done" src="images/freifunk-tempelhof1/two-on-the-roof.jpg" style="width: 500px;" />
+<p class="caption">The setup is almost done.</p>
+</div>
+<p>Other things I'd to write about are: the small wind turbine to provide electricity to all the setup and the funding of this thing. But I'll do that in other article. I don't know the transmission power, and I'd have to check if the station is still up and how much traffic it has. And upload the photo gallery.</p>
+<p>(*) Obviously, when the switch was 100 euro expensive, you can ssh into it, type some commands and do some magic. It was not your usual 15e. cheap switch that stays at home.</p>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
