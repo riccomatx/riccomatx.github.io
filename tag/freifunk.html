@@ -2,13 +2,9 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>riccomatx - freifunk</title>
+        <title>ricco - freifunk</title>
         <link rel="stylesheet" href="https://riccomatx.github.io/theme/css/main.css" />
-        <link href="https://riccomatx.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="riccomatx Atom Feed" />
-
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+        <link href="https://riccomatx.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ricco Atom Feed" />
 </head>
 
 <body id="index" class="home">
@@ -16,46 +12,46 @@
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
 </a>
         <header id="banner" class="body">
-                <h1><a href="https://riccomatx.github.io/">riccomatx </a></h1>
+                <h1><a href="https://riccomatx.github.io/">ricco </a></h1>
                 <nav><ul>
+                    <li><a href="https://riccomatx.github.io/category/fotos.html">fotos</a></li>
                     <li><a href="https://riccomatx.github.io/category/freifunk.html">freifunk</a></li>
-                    <li><a href="https://riccomatx.github.io/category/photos.html">photos</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://riccomatx.github.io/freifunk-berlin-network-activity.html">Is the node alive?</a></h1>
+                    <h1 class="entry-title"><a href="https://riccomatx.github.io/freifunk-berlin-actividad-red-es.html">Sigue en pie el nuevo nodo?</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2017-10-27T00:00:00+02:00">
                 Published: Fr 27 Oktober 2017
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="https://riccomatx.github.io/author/riccomatx.html">riccomatx</a>
+                By                         <a class="url fn" href="https://riccomatx.github.io/author/ricco.html">ricco</a>
         </address>
 <p>In <a href="https://riccomatx.github.io/category/freifunk.html">freifunk</a>.</p>
 <p>tags: <a href="https://riccomatx.github.io/tag/freifunk.html">freifunk</a> </p>
-</footer><!-- /.post-info --><p>I'd like to check if the node set up last week is still alive, and if so, how much activity it had.</p>
-<div class="section" id="berlin-freifunk-network">
-<h2>Berlin Freifunk network</h2>
-<p>There is a <a class="reference external" href="https://hopglass.berlin.freifunk.net/">website</a> where I get a map and if I go to Tempelhofer Feld, in Berlin, I can see on the right side of the park there are 3 nodes: thf-ap[123]. Those are the sector antennas. And I can check their details...</p>
+</footer><!-- /.post-info --><p>Vamos a ver si el nodo instalado la semana pasada aún funciona y qué actividad tiene.</p>
+<div class="section" id="berlin-freifunk">
+<h2>Berlin Freifunk</h2>
+<p>Hay un <a class="reference external" href="https://hopglass.berlin.freifunk.net/">website</a> donde veo un mapa de la red. En ese mapa, junto a Tempelhofer Feld a la derecha veo tres nodos: thf-ap[123], que son las tres antenas instaladas previamente.</p>
 <div class="figure">
-<img alt="Map of nodes in Tempelhofer Feld area" src="images/freifunk-node-map1.png" style="width: 500px;" />
-<p class="caption">Map of nodes in Tempelhofer Feld area</p>
+<img alt="Mapa de nodos Freifunk en Tempelhofer Park" src="images/freifunk-node-map1.png" style="width: 500px;" />
+<p class="caption">Mapa de nodos Freifunk en Tempelhofer Park</p>
 </div>
-<p>Indeed, if I go to the <a class="reference external" href="http://monitor.berlin.freifunk.net/detail.php?p=interface&amp;pi=br-dhcp&amp;t=if_octets&amp;h=thf-ap1&amp;s=86400">monitor for thf-ap1</a> I can see several graphs. One of them is the Internet Traffic. There is one graph per network interface (duplicated: one for bytes and other for packets), and I don't know how the interfaces are organised.</p>
+<p>De hecho, si voy a <a class="reference external" href="http://monitor.berlin.freifunk.net/detail.php?p=interface&amp;pi=br-dhcp&amp;t=if_octets&amp;h=thf-ap1&amp;s=86400">monitor for thf-ap1</a> veo varios gráficos del nodo. Uno es tráfico de internet. Otro es tráfico por interfaz de red (en bytes y en paquetes)</p>
 <div class="figure">
-<img alt="Details of one of the nodes in Tempelhofer Feld." src="images/freifunk-node-map2.png" style="width: 500px;" />
-<p class="caption">Details of one of the nodes in Tempelhofer Feld.</p>
+<img alt="Detalle de uno de los nodos en Tempelhofer Park." src="images/freifunk-node-map2.png" style="width: 500px;" />
+<p class="caption">Detalle de uno de los nodos en Tempelhofer Park.</p>
 </div>
 </div>
-<div class="section" id="node-status">
-<h2>Node status</h2>
-<p>BUT I can see that the reporting is almost continuous, which means that <em>there is no downtime at night when the wind turbine stops</em>.</p>
-<p>There is another link to the <a class="reference external" href="https://wiki.freifunk.net/Berlin:Standorte:Windrad_Tempelhofer_Feld">wiki page for the Freifunk node</a>. I love it, because I can find out a little bit more info on how it was funded, and how is the network configuration between all the four antennas.</p>
-<p>And there is a third link to <a class="reference external" href="https://openwifimap.net/#detail?node=thf-ap1.olsr">details on the node on openwifimap</a>. There I can see the transmission power is 8dBm.</p>
-<p>The bad news are that there is no uplink with the other node in the airport building. Maybe the parabolic dish is not pointing properly.</p>
+<div class="section" id="estado-del-nodo">
+<h2>Estado del nodo</h2>
+<p>Veo también que el reporte es casi continuo, por lo que deduzco que <em>no se apaga por la noche cuando la turbina para</em></p>
+<p>Tambien hay un <a class="reference external" href="https://wiki.freifunk.net/Berlin:Standorte:Windrad_Tempelhofer_Feld">wiki del nodo</a>. Ahí veo más información en cómo se ha financiado el nodo y cómo es la configuración de red entre las cuatro antenas.</p>
+<p>Y así mismo están los <a class="reference external" href="https://openwifimap.net/#detail?node=thf-ap1.olsr">detalles sobre el nodo en openwifimap</a>. Ahí leo que la potencia es de 8dBm.</p>
+<p>La única pega es que el enlace con el backbone de Freifunk a veces se va, ya que la parabólica no siempre acierta a tirar la señal a dónde debe.</p>
 </div>
                 </article>
             </aside><!-- /#featured -->
@@ -66,8 +62,8 @@
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="https://riccomatx.github.io/freifunk-tempelhofer-feld-gallery.html" rel="bookmark"
-                           title="Permalink to ﻿Photo Gallery Freifunk node in Tempelhofer Feld">﻿Photo Gallery Freifunk node in Tempelhofer Feld</a></h1>
+                    <h1><a href="https://riccomatx.github.io/freifunk-tempelhofer-feld-gallery-es.html" rel="bookmark"
+                           title="Permalink to ﻿Galería de fotos de Freifunk en Tempelhofer Park">﻿Galería de fotos de Freifunk en Tempelhofer Park</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -77,20 +73,20 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="https://riccomatx.github.io/author/riccomatx.html">riccomatx</a>
+                By                         <a class="url fn" href="https://riccomatx.github.io/author/ricco.html">ricco</a>
         </address>
-<p>In <a href="https://riccomatx.github.io/category/photos.html">photos</a>.</p>
-<p>tags: <a href="https://riccomatx.github.io/tag/freifunk.html">freifunk</a> <a href="https://riccomatx.github.io/tag/workshop.html">workshop</a> <a href="https://riccomatx.github.io/tag/photos.html">photos</a> </p>
-</footer><!-- /.post-info -->                <p class="first last">Photos from the Freifunk station set up with 3 sector antennas from Ubiquiti Networks and a point-to-point dish link to other station in the former airport building.</p>
+<p>In <a href="https://riccomatx.github.io/category/fotos.html">fotos</a>.</p>
+<p>tags: <a href="https://riccomatx.github.io/tag/freifunk.html">freifunk</a> <a href="https://riccomatx.github.io/tag/workshop.html">workshop</a> <a href="https://riccomatx.github.io/tag/fotos.html">fotos</a> </p>
+</footer><!-- /.post-info -->                <p class="first last">Fotos del nodo Freifunk con tres antenas sectoriales y un enlace punto a punto con un plato parabólico</p>
 
-                <a class="readmore" href="https://riccomatx.github.io/freifunk-tempelhofer-feld-gallery.html">read more</a>
+                <a class="readmore" href="https://riccomatx.github.io/freifunk-tempelhofer-feld-gallery-es.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="https://riccomatx.github.io/freifunk-tempelhofer-feld-node.html" rel="bookmark"
-                           title="Permalink to ﻿Setting up a Freifunk node in Tempelhofer Feld">﻿Setting up a Freifunk node in Tempelhofer Feld</a></h1>
+                    <h1><a href="https://riccomatx.github.io/nodo-freifunk-tempelhofer-feld-es.html" rel="bookmark"
+                           title="Permalink to ﻿Instalando un nodo Freifunk en Tempelhofer Feld">﻿Instalando un nodo Freifunk en Tempelhofer Feld</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -100,13 +96,13 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="https://riccomatx.github.io/author/riccomatx.html">riccomatx</a>
+                By                         <a class="url fn" href="https://riccomatx.github.io/author/ricco.html">ricco</a>
         </address>
 <p>In <a href="https://riccomatx.github.io/category/freifunk.html">freifunk</a>.</p>
-<p>tags: <a href="https://riccomatx.github.io/tag/freifunk.html">freifunk</a> <a href="https://riccomatx.github.io/tag/workshop.html">workshop</a> <a href="https://riccomatx.github.io/tag/chronik.html">chronik</a> </p>
-</footer><!-- /.post-info -->                <p class="first last">Setting up a Freifunk station with 3 sector antennas from Ubiquiti Networks and a point-to-point dish link to other station in the former airport building.</p>
+<p>tags: <a href="https://riccomatx.github.io/tag/freifunk.html">freifunk</a> <a href="https://riccomatx.github.io/tag/workshop.html">workshop</a> </p>
+</footer><!-- /.post-info -->                <p class="first last">Un nuevo nodo en Tempelhof con tres antenas sectorials y un enlace punto a punto en lo que era el edifico del antiguo aeropuerto.</p>
 
-                <a class="readmore" href="https://riccomatx.github.io/freifunk-tempelhofer-feld-node.html">read more</a>
+                <a class="readmore" href="https://riccomatx.github.io/nodo-freifunk-tempelhofer-feld-es.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->

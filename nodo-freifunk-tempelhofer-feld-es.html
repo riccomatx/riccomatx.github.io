@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="utf-8" />
+        <title>﻿Instalando un nodo Freifunk en Tempelhofer Feld</title>
+        <link rel="stylesheet" href="https://riccomatx.github.io/theme/css/main.css" />
+        <link href="https://riccomatx.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ricco Atom Feed" />
+</head>
+
+<body id="index" class="home">
+<a href="https://github.com/riccomatx/">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="https://riccomatx.github.io/">ricco </a></h1>
+                <nav><ul>
+                    <li><a href="https://riccomatx.github.io/category/fotos.html">fotos</a></li>
+                    <li class="active"><a href="https://riccomatx.github.io/category/freifunk.html">freifunk</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://riccomatx.github.io/nodo-freifunk-tempelhofer-feld-es.html" rel="bookmark"
+           title="Permalink to ﻿Instalando un nodo Freifunk en Tempelhofer Feld">﻿Instalando un nodo Freifunk en Tempelhofer Feld</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-10-18T00:00:00+02:00">
+                Published: Mi 18 Oktober 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://riccomatx.github.io/author/ricco.html">ricco</a>
+        </address>
+<p>In <a href="https://riccomatx.github.io/category/freifunk.html">freifunk</a>.</p>
+<p>tags: <a href="https://riccomatx.github.io/tag/freifunk.html">freifunk</a> <a href="https://riccomatx.github.io/tag/workshop.html">workshop</a> </p>
+</footer><!-- /.post-info -->      <div class="figure">
+<img alt="Molino de viento y nodo" src="images/freifunk-tempelhof1/windrad-container.jpg" style="width: 500px;" />
+<p class="caption">Molino de viento y nodo</p>
+<div class="legend">
+A la derecha del contenedor está el equipo de grabación junto a dos personas de la comunidad Freifunk Berlin. A la izquierda está el molino que proveé electricidad a toda la instalación.</div>
+</div>
+<div class="section" id="tempelhofer-freifunk">
+<h2>Tempelhofer Freifunk</h2>
+<p>Es domingo por la mañana, algo pasadas las 12h del mediodía. Llego a un container en Tempelhofer Park, no lejos de la entrada por la Boddinstr. De 14 a 18h. suele haber un taller gratuíto para reparar bicicletas. Hoy además hay tres tíos de la <a class="reference external" href="https://berlin.freifunk.net/index_en/">comunidad Freifunk Berlín</a> y dos tías grabando un <a class="reference external" href="http://fieldtrip.berlin/">documental sobre grupos e iniciativas sociales en tonor a este parque</a>.</p>
+<p>Las del documental me preguntan si me pueden grabar. Por supuesto que no. Mientras tanto los de las antenas están buscando la manera de cómo perforar un par de agujeros en el container para anclar el mástil.</p>
+<dl class="docutils">
+<dt>Tras un rato, dejo al equipo del documental con el mástil y dos freifunkers, y me voy con el tercer freifunker al contenedor a testear los equipos. Los equipos son:</dt>
+<dd><ul class="first last simple">
+<li>Tres antenas sectoriales, cada una con un punto de acceso integrado (<abbr title="Access Point">AP</abbr>) y con una cobertura de 120º, por 200 euros cada. Creo que eran unas <a class="reference external" href="https://www.ubnt.com/airmax/airmax-sector-antenna/">Ubiquiti Networks AM-2G15-120</a>.</li>
+<li>un pequeño plato parabólico con un AP integrado, por unos 60 euros. <a class="reference external" href="https://www.ubnt.com/airmax/litebeam-ac/">Ubiquiti LBE-5AC-23</a>.</li>
+<li>un switch (quizá <a class="reference external" href="https://www.ubnt.com/edgemax/edgepoint/">Ubiquiti EP-R6</a>). Por unos 100 euros, con unos cinco puertos PoE y un <a class="reference external" href="https://es.wikipedia.org/wiki/Transceptor_SFP">SFP</a>.</li>
+<li>y un par de <a class="reference external" href="https://www.ubnt.com/accessories/poe-adapters/">adaptadores PoE</a></li>
+</ul>
+</dd>
+</dl>
+<p>La idea es conectar el nodo con otro nodo que hay en el edificio del aeropuerto. Para eso esta el plato parabólico, para establecer el enlace punto a punto entre el container y el nodo del edificio. El switch conectará la parabólica con las otras tres antenas.</p>
+</div>
+<div class="section" id="configuracion-de-los-equipos">
+<h2>Configuración de los equipos</h2>
+<p>Lo primero es lo primero: empezamos por el switch. Lo alimentamos con el PoE y el PoE al enchufe de la corriente.</p>
+<div class="figure">
+<img alt="Antena sectorial con punto de acceso, switch y PoE" src="images/freifunk-tempelhof1/test-the-configuration.jpg" style="width: 500px;" />
+<p class="caption">Antena sectorial con punto de acceso, switch y PoE</p>
+</div>
+<p>El segundo paso es conectar el switch con el AP. El AP ya está ensamblado en la antena, y no quiere arrancar: en el switch hay que activar el PoE en los cinco puertos. Con eso, problema resuelto.</p>
+<p>Tenemos ya una antena sectorial conectada al switch, todo encendido. Desde un teléfono móvil vemos la red wirless de esa antena, pero al conectarnos, no nos da IP. Con un poco de magia se resuelve el problema.</p>
+<div class="figure">
+<img alt="Plato parabólico para el enlace punto a punto." src="images/freifunk-tempelhof1/dish.jpg" style="width: 500px;" />
+<p class="caption">Plato parabólico para el enlace punto a punto.</p>
+</div>
+<p>Lo tercero que hacemos es conectar la parabólica al switch, de manera que podamos rutear el tráfico hacia fuera de la célula. Cuest apuntar la parabólica con precisión suficiente para conectar con la estación del edificio.</p>
+<p>Una vez que conseguimos apuntar la antena con precisión el resto va seguido. Conectarse a la otra estación y formar parte de la red freifunk de Berlín es automático.</p>
+</div>
+<div class="section" id="finalizar">
+<h2>Finalizar</h2>
+<p>Lo que queda es acabar de conectar las otras dos antenas e instalar todo el nido de antenas en el techo del contenedor.</p>
+<div class="figure">
+<img alt="Casi acabado" src="images/freifunk-tempelhof1/two-on-the-roof.jpg" style="width: 500px;" />
+<p class="caption">Casi acabado.</p>
+</div>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://riccomatx.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://mastodon.at/@riccomatx">mastodon: @riccomatx@mastodon.at</a></li>
+                            <li><a href="https://github.com/riccomatx/">github://riccomatx</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
